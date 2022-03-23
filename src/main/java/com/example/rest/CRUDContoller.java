@@ -1,5 +1,6 @@
 package com.example.rest;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.ExecutionException;
@@ -17,9 +18,14 @@ public CRUDContoller(CRUDService crudService){
     public String createCRUD(@RequestBody CRUD crud) throws InterruptedException, ExecutionException{
     return crudService.createCRUD(crud);
 }
-@GetMapping("/get")
-    public String getCRUD(@RequestParam String documentId) throws InterruptedException, ExecutionException{
-        return crudService.getCRUD(documentId);
-    }
+@GetMapping("/api/get")
+    public CRUD getCRUD(@RequestParam String documentId) throws InterruptedException, ExecutionException {
+    return crudService.getCRUD(documentId);
+}
+@GetMapping("/test")
+    public ResponseEntity<String> testGetEndPoint(){
+    return ResponseEntity.ok("Test .....");
+}
+
 }
 
