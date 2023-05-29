@@ -9,23 +9,26 @@ import java.util.concurrent.ExecutionException;
 public class CRUDContoller {
 
 
-public CRUDService crudService;
-public CRUDContoller(CRUDService crudService){
-    this.crudService=crudService;
-}
+    public CRUDService crudService;
 
-@PostMapping("/create")
-    public String createCRUD(@RequestBody CRUD crud) throws InterruptedException, ExecutionException{
-    return crudService.createCRUD(crud);
-}
-@GetMapping("/api/get")
+    public CRUDContoller(CRUDService crudService) {
+        this.crudService = crudService;
+    }
+
+    @PostMapping("/create")
+    public String createCRUD(@RequestBody CRUD crud) throws InterruptedException, ExecutionException {
+        return crudService.createCRUD(crud);
+    }
+
+    @GetMapping("/api/get")
     public CRUD getCRUD(@RequestParam String documentId) throws InterruptedException, ExecutionException {
-    return crudService.getCRUD(documentId);
-}
-@GetMapping("/test")
-    public ResponseEntity<String> testGetEndPoint(){
-    return ResponseEntity.ok("Test .....");
-}
+        return crudService.getCRUD(documentId);
+    }
+
+    @GetMapping("/test")
+    public ResponseEntity<String> testGetEndPoint() {
+        return ResponseEntity.ok("Test .....");
+    }
 
 }
 
