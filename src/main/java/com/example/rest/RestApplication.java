@@ -26,6 +26,7 @@ import org.springframework.core.io.ClassPathResource;
 public class RestApplication {
 
     public static void main(String[] args) throws IOException {
+        SpringApplication.run(RestApplication.class, args);
 
         ClassLoader classLoader = RestApplication.class.getClassLoader();
 
@@ -39,7 +40,6 @@ public class RestApplication {
         FirebaseApp.initializeApp(options);
 
 
-        SpringApplication.run(RestApplication.class, args);
 
     }
 
