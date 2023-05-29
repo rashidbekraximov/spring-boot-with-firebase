@@ -64,6 +64,7 @@
     </dependencies>
 
     <build>
+        <finalName>spring-boot-firebase</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
